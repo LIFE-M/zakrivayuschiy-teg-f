@@ -1,13 +1,13 @@
 :root {
   --card-width: clamp(23.5rem, 16.29rem + 30.52vw, 43.75rem);
-  --font-family-main: "Inter-Variable", sans-serif; 
+  --font-family-main: "Inter-Variable", sans-serif;
   --font-family-accent: "PressStart2P", monospace;
   --font-weight-var-regular: 410;
   --font-weight-var-bold: 715;
   --font-weight: 400;
   --font-size-main: 18px;
   --text-color: #000;
-  --font-size-label: 14px; 
+  --font-size-label: 14px;
   --font-size-text: 18px;
   --font-size-button: 14px;
   --line-height-text: 21px;
@@ -22,5 +22,5 @@
     --heart-sparks: #FF0000;
     --heart-liked: #FF0000;
     --heart-active: #FF0000;
-    --heart-hover: #000; 
+    --heart-hover: #000;
 }
