@@ -22,13 +22,11 @@
 
 .button:focus-visible {
   box-shadow: 2px 2px 0 var(--color-accent);
-  transition: box-shadow 0.3s ease;
 }
 
 .button:hover::before {
   transform: scaleX(1);
   background-color: var(--color-accent);
-  transition: 0.5s ease-in-out;
 }
 
 .card__icon-button:focus {
@@ -37,7 +35,6 @@
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--color-accent);
-  transition: border 0.3s ease;
 }
 
 .sparks {
