@@ -27,7 +27,7 @@
   justify-content: center;
   gap: 20px;
   font-family: var(--font-family-accent);
-  block-size: clamp(20.4375rem, 19.54rem + 3.85vw, 23rem);
+  padding: 130px 0;
   margin-bottom: 100px;
 }
 
@@ -127,6 +127,7 @@
   cursor: pointer;
   block-size: 36px;
   padding: 0;
+  transition: border 0.3s ease;
 }
 
 .card__like-button {
@@ -139,6 +140,7 @@
   background-color: #fff;
   border: 2px solid var(--color-accent);
   font-family: var(--font-family-accent);
+  transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -245,6 +247,9 @@
 }
 
 @media (width <= 375px) {
+  .header {
+    padding: 122px 0;
+  }
   .card {
     inline-size: 100%;
   }

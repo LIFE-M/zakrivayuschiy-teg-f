@@ -1,7 +1,7 @@
 :root {
   --card-width: clamp(23.5rem, 16.29rem + 30.52vw, 43.75rem);
   --font-family-main: "Inter-Variable", sans-serif;
-  --font-family-accent: "PressStart2P", monospace;
+  --font-family-accent: "PressStart2P", fantasy;
   --font-weight-var-regular: 410;
   --font-weight-var-bold: 715;
   --font-weight: 400;
@@ -10,7 +10,7 @@
   --font-size-label: 14px;
   --font-size-text: 18px;
   --font-size-button: 14px;
-  --line-height-text: 21px;
+  --line-height-text: 1.167;
   --line-height-button: 90%;
   --card-label-shadow: #fff;
   --color-accent: #000;
