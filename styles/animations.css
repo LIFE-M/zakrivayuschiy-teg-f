@@ -1,11 +1,108 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+@keyframes heart-scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+@keyframes heart-sparks-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
-*/
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--color-accent);
+  transition: box-shadow 0.3s ease;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+  background-color: var(--color-accent);
+  transition: 0.5s ease-in-out;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--color-accent);
+  transition: border 0.3s ease;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.contour {
+  transition: fill linear 0.1s;
+}
+
+.core {
+  fill: transparent;
+  transition: fill linear 0.3s 0.03s;
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill linear 0.3s;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--heart-hover);
+  transition: fill linear 0.3s;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--heart-hover);
+  transition: fill linear 0.3s 0.05s;
+}
+
+.card__icon-button:active .core {
+  fill: var(--heart-active);
+  transition: fill linear 0.3s;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--heart-active);
+  transition: fill linear 0.3s 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-liked);
+  transition: fill linear 0.3s 0.06s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-liked);
+  transition: fill linear 0.3s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-liked);
+  transition: fill linear 0.3s 0.05s;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: heart-scale 0.3s ease-in 0.1s 1;
+}
+
+.like-icon.is-liked .sparks {
+  animation: heart-sparks-opacity 0.3s ease-in 0.3s 1;
+}
+
+
+
+
+

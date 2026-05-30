@@ -1,16 +1,264 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
-
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image: var(--background-image-gradient);
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--text-color);
+  font-family: var(--font-family-main);
+  font-variation-settings: "wght" var(--font-weight-var-regular);
+  padding: 100px 0;
 }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 53px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-family: var(--font-family-accent);
+  block-size: clamp(20.4375rem, 19.54rem + 3.85vw, 23rem);
+  margin-bottom: 100px;
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+  font-weight: var(--font-weight);
+}
+
+.header__subtitle {
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+  text-transform: uppercase;
+}
+
+.card {
+  background-color: #fff;
+  border: 2px solid var(--color-accent);
+  inline-size: var(--card-width);
+  
+} 
+
+.card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card__title {
+  padding: 4px 10px;
+  min-height: 30px;
+  font-size: var(--font-size-main);
+  font-variation-settings: "wght" var(--font-weight-var-bold);
+}
+
+.card__image-container {
+  position: relative;
+}
+ 
+.card__image {
+  display: block;
+  inline-size: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-top: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.card__label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--font-family-accent);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight);
+  opacity: 50%;
+  text-shadow:
+    -1px 0 var(--card-label-shadow),
+    0 1px var(--card-label-shadow),
+    1px 0 var(--card-label-shadow),
+    0 -1px var(--card-label-shadow);
+  mix-blend-mode: hard-light;
+  text-transform: uppercase;
+}
+
+@supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--card-label-shadow);
+    text-stroke: 1px var(--card-label-shadow);
+    text-shadow: none;
+  }
+} 
+
+.card__text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px;
+}
+
+.card__text {
+  font-size: var(--font-size-text);
+  line-height: var(--line-height-text);
+}
+
+.card__button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  gap: 6px;
+  padding: 0 25px 25px 0;
+}
+
+.card__icon-button {
+  border: 2px solid transparent;
+  background-color: #fff;
+  cursor: pointer;
+  block-size: 36px;
+  padding: 0;
+}
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
+}
+
+.button {
+  position: relative;
+  background-color: #fff;
+  border: 2px solid var(--color-accent);
+  font-family: var(--font-family-accent);
+  cursor: pointer;
+}
+
+.button::before {
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: var(--color-accent);
+  transition: 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.button__text {
+  position: relative;
+  color: var(--button-color-mix);
+  font-size: var(--font-size-button);
+  line-height: var(--line-height-button);
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+.button__open {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20.5px 20px;
+}
+
+.button__close {
+  padding: 9px 0;
+  text-transform: uppercase;
+}
+
+.popup[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  inline-size: clamp(21.3125rem, 20.45rem + 3.69vw, 22.0625rem);
+}
+
+.popup::backdrop {
+  background-color: var(--color-accent);
+  opacity: 0.75;
+}
+
+.popup__window-text {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.floppy__icon {
+  fill: #000;
+  flex-shrink: 0;
+}
+
+.floppy__icon-color-mix {
+  fill: #fff;
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+.popup__text {
+  font-family: var(--font-family-accent);
+  font-size: var(--font-size-button);
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.filter__saturate {
+  filter: saturate(250%);
+}
+
+.filter__sepia {
+  filter: sepia(50%);
+}
+
+.filter__contrast {
+  filter: contrast(170%);
+}
+
+.filter__blur {
+  filter: blur(3px);
+}
+
+.filter__brightness {
+  filter: brightness(140%);
+}
+
+.filter__grayscale {
+  filter: grayscale(80%);
+}
+
+.filter__mixed {
+  filter: hue-rotate(10deg) grayscale(5%) contrast(110%);
+}
+
+@media (width <= 375px) {
+  .card {
+    inline-size: 100%;
+  }
+  .floppy__icon_size {
+    height: 28px;
+    width: 28px;
+  }
+  .button__open {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
