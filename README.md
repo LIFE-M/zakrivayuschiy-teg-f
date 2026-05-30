@@ -1,1 +1,1 @@
-https://github.com/LIFE-M/slozhno-sosredotochitsya-fd
+https://github.com/LIFE-M/zakrivayuschiy-teg-f
